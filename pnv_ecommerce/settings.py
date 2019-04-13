@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pnv_blog',
-    'pnv_shop'
+    'pnv_blog.apps.PnvBlogConfig',
+    'pnv_shop.apps.PnvShopConfig'
 ]
 
 MIDDLEWARE = [
