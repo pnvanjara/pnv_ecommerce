@@ -51,4 +51,56 @@
                     # from .models import Product
                     # admin.site.register(Product)
                 # after restart you server
-                
+        # Adding media Directory
+            # go to pnv_eccomerse/settings.py
+            # Add Last (static url after)
+                # MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+                # MEDIA_URL = '/media/'
+            # then go you main project urls.py
+                # imports this
+                    # form django.conf import settings
+                    # from django.conf.urls.static imprt static
+                # urlpatterns = [
+                # ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+        # Fetching product using python manage.py shell
+            # Written codes
+                # python manage.py shell
+                    # open shell
+                # from pnv_shop.models import Product
+                    # import product table in pnv_shop
+                # from django.utils import timezone
+                    # import timezone
+                # Product.objects.all
+                    # all object get
+                # Add data in your database table
+                    # myprod = Product(product_name="mouse",category="computer",subcategory="devices",price=10,desc="mouses of product",pub_date=timezone.now())
+                        # add all poduct
+                    # myprod.save()
+                        # save myprod
+                        # add new record in your database
+                # get any product
+                    # Product.objects.get(product_name="mouse")
+        # Template Inheritance
+            # you extends file give path
+                # {% extends 'file_path' %}
+            # after main file made so, all same content add this file all other file extends this file
+                # made blocks you add in this extends file
+                # ex...
+                    # in body
+                        # {% block body %} {% endblock %}
+                    # add i extends file
+                        # {% block body %} written all in this {% endblock %}
+                    #ex...
+                        # in about.html
+                            # '   {% extends 'pnv_shop/main.html' %}
+                            #     {% block title %}About{% endblock %}
+                            #     {% block body %}
+                            #     <center><h1>About Page</h1></center>
+                            #     {% endblock %}
+        # Showing Product in homepage
+            # first import in views model
+                # from .models import Product
+            # written in views 
+                # products = Product.objects.all()
+                    # for get all product table data fetch
+
